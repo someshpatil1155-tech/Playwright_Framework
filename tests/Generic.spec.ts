@@ -15,10 +15,10 @@ test('Mouse Operations', async ({ page }) => {
   await page.locator("//a[text()='My Account']").click();
   await page.waitForTimeout(2000);
   await page.locator("//input[@name='Customise']").click();
-  await page.dragAndDrop('#cl2', '#cl6');
-  await page.waitForTimeout(6000);
-  let x = await page.locator("#cl6").textContent();
-    console.log(x);
+  //await page.dragAndDrop('#cl2', '#cl6');
+ // await page.waitForTimeout(6000);
+  //let x = await page.locator("#cl6").textContent();
+   // console.log(x);
 
 
  // await page.waitForTimeout(2000);
