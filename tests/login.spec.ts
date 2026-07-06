@@ -21,13 +21,13 @@ test('verify_Title_TC01', async ({ page }) => {
   //const data = await getCSVTestData('testdata/data.csv', 'verify_Title_TC01');
   //const data = await getExcelDataByTC('verify_Title_TC01');
   const data = await getExcelDataByTC("verify_Title_TC01");
-  await page.goto('/');
+  await page.goto('http://localhost:100');
   await expect(page).toHaveTitle(data.title);
   await page.close();
 });
 
 test('verify_logo_TC02', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('http://localhost:100');
   loginpage = new LoginPage(page);
   let isLogoDisplayed = await loginpage.isLogoDisplayed();
   await expect(isLogoDisplayed).toBe(true);
@@ -38,7 +38,7 @@ test('verify_invalid_login_TC03', async ({ page }) => {
   //const data = getTestData('verify_invalid_login_TC03');
   //  const data = await getCSVTestData('testdata/data.csv', 'verify_invalid_login_TC03');
    const data = await getExcelDataByTC("verify_invalid_login_TC03");
-  await page.goto('/');
+  await page.goto('http://localhost:100');
   loginpage = new LoginPage(page);
   await loginpage.login(data.username, data.password);
   const isErrorMsgDisplayed = await loginpage.isErrorMsgDisplayed();
@@ -50,7 +50,7 @@ test('verify_valid_login_TC04', async ({ page }) => {
   //const data = getTestData('verify_valid_login_TC04');
   //const data = await getCSVTestData('testdata/data.csv', 'verify_valid_login_TC04');
   const data = await getExcelDataByTC("verify_valid_login_TC04");
-  await page.goto('/');
+  await page.goto('http://localhost:100');
   loginpage = new LoginPage(page);
   await loginpage.login(data.username, data.password);
   await page.waitForTimeout(3000);
@@ -67,7 +67,7 @@ test('verify_create_lead_with_mandatory_fields_TC05', async ({ page }) => {
   //const data = getTestData('verify_create_lead_with_mandatory_fields_TC05');
   //const data = await getCSVTestData('testdata/data.csv', 'verify_create_lead_with_mandatory_fields_TC05');
   const data = await getExcelDataByTC("verify_create_lead_with_mandatory_fields_TC05");
-  await page.goto('/');
+  await page.goto('http://localhost:100');
   loginpage = new LoginPage(page);
   await loginpage.login(data.username, data.password);
   await page.waitForTimeout(3000);
